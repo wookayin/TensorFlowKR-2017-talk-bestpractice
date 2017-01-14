@@ -9,7 +9,7 @@ class VGG19():
         ...
         self.fc6 = layers.fully_connected(self.pool5, 4096, scope='fc6')
         self.fc7 = layers.fully_connected(self.fc6, 4096, scope='fc7')
-        self.output = layers.fully_connected(fc7, 1000, scope='output')
+        self.output = layers.fully_connected(self.fc7, 1000, scope='output')
 ```
 
 ```python
