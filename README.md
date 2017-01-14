@@ -9,11 +9,12 @@ Toward Best Practices of TensorFlow Code Patterns
 A talk in [the 2nd meetup][tfkr-meetup] of [TensorFlow Korea Group][tfkr-facebook] <br/>
 January 14th, 2017
 
-<p align="center">
-⏲
-<strong><i>Coming Soon</i></strong>
-🎨
-</p>
+
+Slides
+------
+
+- :kr: [**발표자료 (In Korean)**](https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/ko/)
+- :us: Lecture Slide (In English) --- _**Coming Soon!**_
 
 
 Abstract (In Korean)

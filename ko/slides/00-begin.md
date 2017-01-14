@@ -12,7 +12,7 @@ class: titlepage, no-number
 ### .oc-red-1.small[January 14th, 2017] <br/> .small[In the TensorFlow Korea 2nd Meetup]
 
 .small[http://bit.ly/tftalk-best-practice] <br/>
-.small[https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/ko/]
+.small[https://github.com/wookayin/TensorFlowKR-2017-talk-bestpractice/]
 
 
 
