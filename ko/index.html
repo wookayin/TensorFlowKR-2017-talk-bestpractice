@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Toward Best Practices of TensorFlow Code Patterns</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,500);
+      @import url(https://fonts.googleapis.com/css?family=Lato);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+
+    <style>
+      @import url('./balloon.min.css');
+      [data-balloon]:after { font-size: 20px !important; }
+      [data-balloon][data-balloon-break]:after { white-space: pre !important; }  /* issue #39 */
+    </style>
+
+  </head>
+  <body>
+    <div id="slideshow"></div>
+    <div id="overlay"></div>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+    <script src="./remark-custom.min.js" type="text/javascript"></script>
+    <script src="lib/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'] ],
+        displayMath: [ ['$$','$$'] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+    </script>
+    <script async type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.5/gist-embed.min.js"></script>
+    <script async type="text/javascript" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+    <script type="text/javascript">
+      var hljs = remark.highlighter.engine;
+      window['hljs'] = hljs;
+    </script>
+    <!--
+    <script src="lib/terminal.language.js" type="text/javascript"></script>
+    -->
+    <script src="custom.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+      function launch(sourceString) {
+        var slideshow = remark.create({
+          source: sourceString,
+          /*sourceUrl: 'slides.md',*/
+          highlightStyle: 'github',
+          highlightLines: true,
+
+          // navigation options
+          navigation: {
+            scroll: false,
+            touch: true,
+            click: false
+          },
+
+          // Disable counting of incremental slides in the slide counting
+          countIncrementalSlides: false
+        });
+        window['slideshow'] = slideshow;
+
+        // extract the embedded styling from ansi spans
+        $('code.terminal span.hljs-ansi').replaceWith(function(i, x) {
+          x = x.replace(/&lt;(\/?(span).*?)&gt;/g, '<$1>');
+          return x;
+        });
+
+        // make all the outlinks open in a new tab
+        $('a[href^=http]').attr('target', '_blank');
+
+        // gist
+        $("code[data-gist-id]").each(function() {
+          var gist_id = $(this).attr('data-gist-id');
+          var height = $(this).attr('height');
+
+          var $gist = $(this).gist(function() {
+            $gist.find(".gist-data").css({"height" : height});
+          });
+        });
+
+        // invoke custom.js
+        slideCustomActions(slideshow);
+      }
+
+      $(function() {
+        $.when(
+          $.get('slides/00-begin.md'),
+          $.get('slides/10-introduction.md'),
+          $.get('slides/20-modelstyle.md'),
+          $.get('slides/20-abstraction.md'),
+          //$.get('slides/20-module.md'),
+          $.get('slides/20-scope.md'),
+          $.get('slides/20-highlevel.md'),
+          $.get('slides/20-trainval.md'),
+          $.get('slides/20-data.md'),
+          //$.get('slides/20-monitoring.md'),
+          //$.get('slides/20-tips.md'),
+          $.get('slides/30-practices.md'),
+          $.get('slides/99-end.md')
+        ).done(function() {
+          var args = Array.prototype.slice.call(arguments);
+
+          // concatenate all the markdown contents from sources
+          var contents = args.reduce(function(previousValue, currentValue) {
+            if(! previousValue) return currentValue[0];
+            else return previousValue + "\n---\n" + currentValue[0];
+          }, '');
+
+          /* loading complete. create slideshow and render it */
+          launch(contents);
+        });
+      });
+    </script>
+
+  </body>
+</html>
