@@ -22,9 +22,6 @@ template: centertext
     });
 </script>
 
-
-
-
 ---
 
 'Best Practice' 라고 써놨지만 <br/>
@@ -40,8 +37,6 @@ template: centertext
 문서화되지 않은 TF 기능 <br/>
 하루가 다르게 새로 추가되는 새로운 기능 <br/>
 .dogdrip[원래 삽질하며 배우는 거라지만..]
-
-
 
 ---
 
@@ -90,8 +85,6 @@ template: centertext
 어떤 이야기들을 할 것인가?
 
 
-
-
 ---
 
 layout:false
@@ -104,10 +97,6 @@ layout:false
 - (4) 실험! 실험!
 
 쉬워 보이지만...
-
-
-
-
 
 ---
 
@@ -193,8 +182,6 @@ layout:false
 .dogdrip[복잡한 기능과 요구사항이 많음]
 
 
-
-
 ---
 
 class: middle
@@ -208,8 +195,6 @@ class: middle
 [schulley-2015]: https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf
 
 
-
-
 ---
 
 ## 두 가지 핵심 목표
@@ -219,9 +204,6 @@ class: middle
 
 
 다양한 Example 위주로 살펴봅시다.
-
-
-
 
 
 ---
@@ -251,8 +233,6 @@ template: recipe
 # Common Patterns and Practices
 
 
-
-
 ---
 
 layout: false
@@ -265,8 +245,4 @@ layout: false
 - [(4) Validation while Training](#trainval)
 - [(5) Dataset](#data)
 - [(6) Other Tips](#tips)
-
-
-
-
 

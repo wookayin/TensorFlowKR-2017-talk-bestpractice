@@ -3,8 +3,6 @@ template: recipe
 
 # Basic Project Structure
 
-
-
 ---
 
 layout: false
@@ -15,8 +13,6 @@ layout: false
 - (2) Model training loop 및 pipeline을 구현한다.
 - (3) Model 코드를 구현한다.
 - .dogdrip[(4) 실험! 실험!]
-
-
 
 ---
 
@@ -34,16 +30,12 @@ layout: false
 
 
 이 때,
-
-
 --
 
 .best-practice[Model 과 train/eval 을 분리(decouple)시키는 것이 필요하다.]
 <br/>
 다시말해, `model.py` 와 `train.py` 를 나누자 !!
 <sup>[1]</sup> <span class="footnote">[1] 경우에 따라 train/test 를 한 코드에서 할거면 대신 `main.py --train` 등의 flag를 쓰는 것도 방법!</span>
-
-
 
 ---
 
@@ -53,9 +45,6 @@ layout: false
 
 - **단일 책임의 원칙** [(Single Responsibility Principle)][wiki-SRP]: 관심사의 분리
   - "각 모듈은 한 가지의 .border-red.border-dotted[역할] 또는 .border-red.border-dotted[책임]을 가져야 한다"
-
-
-
 
 --
 
@@ -96,8 +85,6 @@ def main():
         model.train()
 ```
 
-
-
 ---
 
 .oc-green-7[*A Good Style*]
@@ -130,8 +117,6 @@ def main():
 
 model 의 constructor에 `session`을 넣어주지 않음에 유의
 
-
-
 ---
 
 ## Model 과 Training 코드의 분리
@@ -147,10 +132,6 @@ model 의 constructor에 `session`을 넣어주지 않음에 유의
 .best-practice[model은 `session` 과 결합하지 않고 분리하는 것이 좋다!]
   - model: graph 및 TensorFlow op을 생성(build)하는 역할
   - `session`: 생성된 graph (TensorFlow ops)를 .oc-blue-6[실행]하기 위한 context
-
-
-
-
 
 
 ---

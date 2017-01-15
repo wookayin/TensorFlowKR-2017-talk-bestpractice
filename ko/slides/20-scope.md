@@ -28,9 +28,6 @@ def train():
 - 각 layer에서 쓰인 Variable 도 갖고오고 싶은데...
 - 각 layer에서 loss가 각각 발생한다면? (e.g. l2 regularization)
 
-
-
-
 ---
 
 
@@ -52,8 +49,6 @@ with tf.name_scope("Img2Txt"):
         txt = tf.nn.rnn(rnn_cell, inputs=...)
 ```
 
-
-
 ---
 
 ## Collection: Cross-cutting Concerns
@@ -61,16 +56,11 @@ with tf.name_scope("Img2Txt"):
 .center[.img-80[ ![Cross-concern](images/diagram-crosscutting-before.png) ]]
 
 
-
-
-
 ---
 
 ## Collection: Cross-cutting Concerns
 
 .center[.img-80[ ![Cross-concern](images/diagram-crosscutting-after.png) ]]
-
-
 
 
 --
@@ -177,8 +167,6 @@ tf.losses.add_loss(sequence_loss)
 total_loss = tf.losses.get_total_loss(add_regularization_losses=True)
 ```
 
-
-
 ---
 
 ### `Collection`
@@ -244,8 +232,6 @@ InceptionResnetV2/Conv2d_3b_1x1/BatchNorm/beta:0 (float32_ref 80) [80, bytes: 32
 InceptionResnetV2/Conv2d_3b_1x1/BatchNorm/moving_mean:0 (float32_ref 80) [80, bytes: 320]
 ```
 
-
-
 ---
 
 ### Scope: 장점
@@ -269,8 +255,6 @@ tf.contrib.framework.get_model_variables(scope, suffix)
 ```
 
 가져와서 어디에 쓸까요?
-
-
 
 ---
 
@@ -316,8 +300,6 @@ with tf.variable_scope("encoder") as sc:
 [slim-variables-wrapper]: https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/slim#variables
 
 차이점은 무엇일까? 어느 것을 써야 할까요?
-
-
 
 --
 

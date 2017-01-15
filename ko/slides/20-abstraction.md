@@ -7,8 +7,6 @@ template: recipe
 ### Abstraction Patterns in TensorFlow
 
 
-
-
 ---
 
 layout: false
@@ -33,8 +31,6 @@ def train():
 .small[
 e.g. [inception](https://github.com/tensorflow/models/tree/master/inception/inception), [slim nets](https://github.com/tensorflow/models/tree/master/slim/nets)
 ]
-
-
 
 ---
 
@@ -67,9 +63,6 @@ def train():
 e.g. [im2txt](https://github.com/tensorflow/models/tree/master/im2txt)
 ]
 
-
-
-
 ---
 
 ## A Question: Model (Component) 구현 스타일
@@ -77,7 +70,6 @@ e.g. [im2txt](https://github.com/tensorflow/models/tree/master/im2txt)
 정답......
 --
 은 없습니다
-
 
 --
 ...만 .dogdrip[그때그때 달라요] (둘 다 좋은 practice입니다)
@@ -92,8 +84,6 @@ e.g. [im2txt](https://github.com/tensorflow/models/tree/master/im2txt)
 - (d) 작성한 컴포넌트를 library 처럼 다른 곳에 붙이거나 <br>
       여러 모델을 합성(e.g. Ensemble)하기 용이해야 하고
 - 등등등...
-
-
 
 ---
 
@@ -123,9 +113,6 @@ def train():
 - (b) `conv5_4` feature map 등 다른 endpoint를 가져오고 싶다면?
 - (c) 각 layer별 variable 들을 가져오고 싶다면?
 
-
-
-
 ---
 
 .oc-red-6[Oh....]
@@ -149,9 +136,6 @@ def train():
 ```
 
 - (b) .orange[`conv5_4` feature map 등 다른 endpoint를 가져오고 싶다면?]
-
-
-
 
 
 ---
@@ -183,9 +167,6 @@ def train():
 
 
 
-
-
-
 ---
 
 .oc-orange-6[Hmm...?]
@@ -212,9 +193,6 @@ def train():
 ```
 
 - (b) .orange[`conv5_4` feature map 등 다른 endpoint를 가져오고 싶다면?]
-
-
-
 
 ---
 
@@ -245,8 +223,6 @@ def train():
         for s in range(MAX_STEPS):
 *           session.run(train_op, feed_dict={self.image: ...})
 ```
-
-
 
 
 ---
@@ -291,14 +267,5 @@ def train():
 - 단, class가 해야할 것까지만 하도록 하고, 불필요한 기능을 많이 넣어 지나치게 방대해지지 않도록 유의하자!
 - 앞의 요구사항 (a)-(d)을 잘 고려하면, 깔끔한 설계가 가능하고
   여러 모델을 재조합하기 등의 복잡한 요구사항에도 잘 대응할 수 있다.
-
-
-
-
-
-
-
-
-
 
 

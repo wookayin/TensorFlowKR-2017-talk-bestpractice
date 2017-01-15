@@ -14,8 +14,6 @@ class: titlepage, no-number
 .small[http://bit.ly/tftalk-best-practice] <br/>
 .small[https://github.com/wookayin/TensorFlowKR-2017-talk-bestpractice/]
 
-
-
 ---
 layout: false
 
@@ -33,7 +31,4 @@ Seoul National University
 **Beomjun Shin** ([@shastakr][shastakr-gh])
 Hyperconnect Inc.
 ]
-
-
-
 

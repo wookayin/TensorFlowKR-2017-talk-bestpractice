@@ -26,8 +26,6 @@ layout: false
 [`resnet-tf`](https://github.com/xuyuwei/resnet-tf)
 ]
 
-
-
 ---
 
 ## High-level APIs for TensorFlow
@@ -57,8 +55,6 @@ layout: false
 [prettytensor]: https://github.com/google/prettytensor
 [sugartensor]: https://github.com/buriburisuri/sugartensor
 
-
-
 ---
 
 template: centertext
@@ -67,17 +63,12 @@ template: centertext
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I hoped TensorFlow would standardize our code but it&#39;s low level so we&#39;ve diverged on layers over it: Slim, PrettyTensor, Keras, TFLearn ...</p>&mdash; Andrej Karpathy (@karpathy) <a href="https://twitter.com/karpathy/status/765734518594547712">August 17, 2016</a></blockquote>
 
-
-Andrej Karpathy도 예전에 이를 지적한 적이 있습니다.
-
 ---
 
 ## 선택 시 고려할 것들
 
 TensorFlow core (contrib 포함)에 있는 것을 가급적 먼저 선택하되
 .dogdrip[믿고쓰는 구글],
-
-
 
 --
 
@@ -111,8 +102,6 @@ model.fit(X, Y, n_epoch=50, shuffle=True, validation_set=(X_test, Y_test),
 
 .gray[➡ 결국엔 다 뜯어고쳐야 할 수도 있으니 처음에 잘 선택합시다]
 
-
-
 ---
 
 ## Examples of [`tf.contrib`][contrib]: Common Layers
@@ -141,11 +130,6 @@ with tf.variable_scope(scope, 'alexnet_v2', [inputs]) as sc:
 
 기타: `layers.batch_norm`, `tf.one_hot_encoding`
 
-
-
-
-
-
 ---
 
 ## Examples of [`tf.contrib`][contrib]: `train_op`
@@ -167,8 +151,6 @@ self.train_op = self.optimizer.apply_gradients(
 )
 ```
 
-
-
 --
 
 After :
@@ -188,8 +170,6 @@ self.train_op = tf.contrib.layers.optimize_loss(
     clip_gradients=max_grad_norm
 )
 ```
-
-
 
 ---
 
@@ -216,15 +196,11 @@ loss = slim.losses.softmax_cross_entropy_with_logits(logits, labels)
 # ...train helper
 ```
 
-
-
 ---
 
 .img-100[![](images/tensorflow-model-zoo.png)]
 
 Check out the [Tutorial - Pretrained Models](https://github.com/tensorflow/models/tree/master/slim#pre-trained-models)
-
-
 
 ---
 
