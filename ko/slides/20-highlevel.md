@@ -146,7 +146,7 @@ gradients = tf.gradient(model.loss, train_vars)
 # gradient clipping by max norm
 gradients, _ = tf.clip_by_global_norm(gradients, max_grad_norm)
 self.train_op = self.optimizer.apply_gradients(
-    zip(grads, train_vars),
+    zip(gradients, train_vars),
     global_step=self.global_step
 )
 ```
