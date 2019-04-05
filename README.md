@@ -4,17 +4,33 @@ Toward Best Practices of TensorFlow Code Patterns
 **Jongwook Choi** ([@wookayin][wookayin]) and
 **Beomjun Shin** ([@shastakr][shastakr])
 
-[https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/][github-pages]
-
 A talk in [the 2nd meetup][tfkr-meetup] of [TensorFlow Korea Group][tfkr-facebook] <br/>
 January 14th, 2017
+
+
+<hr>
+<p align="center">
+🚧 Warning!! 🚧
+</p>
+<p align="center">
+Many contents in this talk are <b>outdated</b> (and thus less recommended) as they were based on older versions of TensorFlow.
+<br/>
+TensorFlow now has more handy APIs and is moving toward <a href="https://www.tensorflow.org/alpha/guide/effective_tf2">TF 2.0</a>
+that encourages many better practices.
+<br/>
+This repository is kept only for archival purposes.
+</p>
+
+<hr>
+
+[https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/][github-pages]
 
 
 Slides
 ------
 
 - :kr: [**발표자료 (In Korean)**](https://wookayin.github.io/TensorFlowKR-2017-talk-bestpractice/ko/)
-- :us: Lecture Slide (In English) --- _**Coming Soon!**_
+- :us: Lecture Slide (In English): ~_Coming Soon!_~
 
 
 Abstract (In Korean)
